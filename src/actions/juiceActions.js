@@ -1,5 +1,30 @@
 import * as types from '../constants/actionTypes';
 import Airtable from 'airtable';
+import firebase from 'firebase';
+import firestore from 'firebase/firestore';
+
+var config = {
+  apiKey: "AIzaSyBj5uaevyH9QNKMjNMKg8wv7dXY7s3GHYs",
+  authDomain: "cmyp-55b60.firebaseapp.com",
+  databaseURL: "https://cmyp-55b60.firebaseio.com",
+  projectId: "cmyp-55b60",
+  storageBucket: "cmyp-55b60.appspot.com",
+  messagingSenderId: "618577637588"
+};
+if (!firebase.apps.length) {
+  firebase.initializeApp(config);
+}
+
+const db = firebase.firestore();
+
+const prayerRef = db.collection('prayers');
+function moose(){
+  prayerRef.add({text: 'he'}).then(() => {console.log('prayer saved')}).catch(
+    (error) => {console.log('Got an error: ', error)}
+  )
+}
+moose();
+
 
 // import {getFormattedDateTime} from '../utils/dates';
 
