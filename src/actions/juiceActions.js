@@ -83,19 +83,17 @@ export function getAllDataFailure() {
   }
 }
 
-export function fetchAllData(args) {
+export function fetchAllPrayers() {
   return (dispatch) => {
     dispatch(getAllData())
     let results = []
-    base('Influences').select({
-      // maxRecords: 3,
-      view: "*"
-    }).eachPage( function page(records, fetchNextPage) {
-      records.forEach(record => {
-        results.push({id: record.id, details: record.fields})
+    prayerRef.get()
+    .then(snapshot => {
+      snapshot.forEach(doc => {
+        results.push({id: doc.id, data: doc.data()})
       });
-      fetchNextPage();
-    }).then((data) => {
+    })
+    .then((data) => {
         dispatch(getAllDataSuccess(results))
       })
       .catch((err) => {
