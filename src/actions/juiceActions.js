@@ -1,5 +1,4 @@
 import * as types from '../constants/actionTypes';
-import Airtable from 'airtable';
 import firebase from 'firebase';
 import firestore from 'firebase/firestore';
 
@@ -27,10 +26,6 @@ const prayerRef = db.collection('prayers');
 
 
 // import {getFormattedDateTime} from '../utils/dates';
-
-const API_KEY = 'keysmOnboBG8IYPwR';
-
-var base = new Airtable({apiKey: API_KEY}).base('appwS8caNUMzpsFwb');
 
 
 export function getData() {

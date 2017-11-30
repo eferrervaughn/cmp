@@ -30,7 +30,6 @@
   "author": "Eric",
   "license": "MIT",
   "dependencies": {
-    "airtable": "0.5.0",
     "emotion": "8.0.10",
     "firebase": "4.6.2",
     "object-assign": "4.1.0",
