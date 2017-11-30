@@ -29,7 +29,7 @@ export class Juice extends React.Component {
     //     onACTION={this.ACTION}
     //   />
     <div>
-    <StyledButton hue="blue" faith="white" onClick={() => this.props.actions.fetchData('rec2QWBVRGEI5r1k0')}>
+    <StyledButton hue="blue" faith="white" onClick={() => this.props.actions.fetchPrayer('1ddqvYHtbhmrRCSQ4K4Y')}>
         Fetch Data
     </StyledButton>
     {this.props.fetching ? 'Loading' : ''}

@@ -18,12 +18,12 @@ if (!firebase.apps.length) {
 const db = firebase.firestore();
 
 const prayerRef = db.collection('prayers');
-function moose(){
-  prayerRef.add({text: 'he'}).then(() => {console.log('prayer saved')}).catch(
-    (error) => {console.log('Got an error: ', error)}
-  )
-}
-moose();
+// function moose(){
+//   prayerRef.add({text: 'he'}).then(() => {console.log('prayer saved')}).catch(
+//     (error) => {console.log('Got an error: ', error)}
+//   )
+// }
+// moose();
 
 
 // import {getFormattedDateTime} from '../utils/dates';
@@ -52,12 +52,12 @@ export function getDataFailure() {
   }
 }
 
-export function fetchData(id) {
+export function fetchPrayer(id) {
   return (dispatch) => {
     dispatch(getData())
-    base('Influences').find(id)
-      .then((data) => {
-        dispatch(getDataSuccess({id, data: data.fields}))
+    prayerRef.doc(id).get()
+      .then((doc) => {
+        dispatch(getDataSuccess(doc.data()))
       })
       .catch((err) => console.log('err:', err))
   }
