@@ -59,6 +59,22 @@ export function fetchPrayer(id) {
 }
 // fetching all data 
 
+export function deletePrayer(id) {
+  return (dispatch) => {
+    prayerRef.doc(id).delete()
+    .then((doc) => {
+      console.log('delete return:', doc);
+      dispatch(deleteSuccess(doc))
+    })
+    .catch((err) => console.log('err:', err))
+  }
+}
+
+export function deleteSuccess(doc) {
+  return {
+    type: 'DELETE SUCCESS'
+  }
+}
 export function getAllData() {
   return {
     type: types.FETCHING_ALL_DATA

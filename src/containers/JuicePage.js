@@ -35,7 +35,11 @@ export class Juice extends React.Component {
     {this.props.fetching ? 'Loading' : ''}
     <br></br>
     <StyledButton hue="lightred" faith="black" onClick={() => this.props.actions.fetchAllPrayers()}>
-      Fetch All Data
+      Fetch All Prayers
+    </StyledButton>
+    <br></br>
+    <StyledButton hue="darkgreen" faith="white" onClick={() => this.props.actions.deletePrayer('TOXUMkOZnhacVVJpUOYJ')}>
+      Delete Prayer
     </StyledButton>
     </div>
     );

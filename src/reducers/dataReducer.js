@@ -4,7 +4,8 @@ const initialState = {
   data: [],
   dataFetched: false,
   isFetching: false,
-  error: false
+  error: false,
+  deleted: false
 }
 
 export default function dataReducer (state = initialState, action) {
@@ -27,6 +28,11 @@ export default function dataReducer (state = initialState, action) {
         ...state,
         isFetching: false,
         error: true
+      }
+    case 'DELTE_SUCCESS':
+      return {
+        ...state,
+        deleted: true
       }
     default:
       return state
