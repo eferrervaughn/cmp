@@ -41,6 +41,10 @@ export class Juice extends React.Component {
     <StyledButton hue="darkgreen" faith="white" onClick={() => this.props.actions.deletePrayer('TOXUMkOZnhacVVJpUOYJ')}>
       Delete Prayer
     </StyledButton>
+    <br></br>
+    <StyledButton hue="purple" faith="white" onClick={() => this.props.actions.setLoading('prayers',true)}>
+      Loading Scope Test
+    </StyledButton>
     </div>
     );
   }

@@ -96,7 +96,7 @@ export function getAllDataFailure() {
 
 export function fetchAllPrayers() {
   return (dispatch) => {
-    dispatch(getAllData())
+    dispatch(setLoading('prayers',true))
     let results = {}
     prayerRef.get()
     .then(snapshot => {
@@ -105,11 +105,24 @@ export function fetchAllPrayers() {
       });
     })
     .then((data) => {
+        dispatch(setLoading('prayers',false))
         dispatch(getAllDataSuccess(results))
       })
       .catch((err) => {
+        dispatch(setLoading('prayers',false))
         dispatch(getAllDataFailure())
         console.log('err:', err)
       })
+  }
+}
+
+// Loading action
+export function setLoading (scope, loading) {
+  return {
+    type: types.SET_LOADING,
+    payload: {
+      scope,
+      loading
+    }
   }
 }
