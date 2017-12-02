@@ -97,11 +97,11 @@ export function getAllDataFailure() {
 export function fetchAllPrayers() {
   return (dispatch) => {
     dispatch(getAllData())
-    let results = []
+    let results = {}
     prayerRef.get()
     .then(snapshot => {
       snapshot.forEach(doc => {
-        results.push({id: doc.id, data: doc.data()})
+        results[doc.id] =  doc.data()
       });
     })
     .then((data) => {
