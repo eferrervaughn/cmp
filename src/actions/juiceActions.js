@@ -65,16 +65,16 @@ export function fetchFailure(scope) {
 // }
 // // fetching all data 
 
-// export function deletePrayer(id) {
-//   return (dispatch) => {
-//     prayerRef.doc(id).delete()
-//     .then((doc) => {
-//       console.log('delete return:', doc);
-//       dispatch(deleteSuccess(doc))
-//     })
-//     .catch((err) => console.log('err:', err))
-//   }
-// }
+export function deletePrayer(id) {
+  return (dispatch) => {
+    prayerRef.doc(id).delete()
+    .then((doc) => {
+      console.log('delete return:', doc);
+      dispatch(deleteSuccess(doc))
+    })
+    .catch((err) => console.log('err:', err))
+  }
+}
 
 // export function deleteSuccess(doc) {
 //   return {
