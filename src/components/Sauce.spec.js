@@ -25,7 +25,7 @@ describe("Sauce", () => {
   // All tests will go here
   it("always renders a div", () => {
       const divs = sauce().find("div");
-      expect(divs.length).toBeGreaterThan(10);
+      expect(divs.length).toBeGreaterThan(0);
   });
   describe("the rendered div", () => {
       it("contains everything else that gets rendered", () => {
