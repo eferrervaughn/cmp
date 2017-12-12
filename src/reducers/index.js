@@ -1,13 +1,9 @@
 import { combineReducers } from 'redux';
-import appData from './dataReducer';
-import influences from './allDataReducer';
-import loading from './loadingReducer';
+import data from './requestReducer';
 import { routerReducer } from 'react-router-redux';
 
 const rootReducer = combineReducers({
-  appData,
-  influences,
-  loading,
+  data,
   routing: routerReducer
 });
 

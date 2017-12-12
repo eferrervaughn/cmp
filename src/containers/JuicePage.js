@@ -34,16 +34,12 @@ export class Juice extends React.Component {
     </StyledButton>
     {this.props.fetching ? 'Loading' : ''}
     <br></br>
-    <StyledButton hue="lightred" faith="black" onClick={() => this.props.actions.fetchAllPrayers()}>
+    <StyledButton hue="lightred" faith="black" onClick={() => this.props.actions.fetchAll('prayers')}>
       Fetch All Prayers
     </StyledButton>
     <br></br>
     <StyledButton hue="darkgreen" faith="white" onClick={() => this.props.actions.deletePrayer('TOXUMkOZnhacVVJpUOYJ')}>
       Delete Prayer
-    </StyledButton>
-    <br></br>
-    <StyledButton hue="purple" faith="white" onClick={() => this.props.actions.setLoading('prayers',true)}>
-      Loading Scope Test
     </StyledButton>
     </div>
     );
@@ -58,7 +54,7 @@ Juice.propTypes = {
 function mapStateToProps(state) {
   return {
     // app state you want to access
-    fetching: state.appData.isFetching
+    fetching: state.data.prayersLoading
   };
 }
 

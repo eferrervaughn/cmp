@@ -1,7 +1,18 @@
-export const INITIAL_LOADING_STATE = {
+export const INITIAL_REQUEST_STATE = {
     prayersLoading: false,
+    prayersData: {},
+    prayersDataFailure: false,
+    prayersLoadingSuccess: false,
+
     praisesLoading: false,
-    usersLoading: false
+    praisesData: {},
+    praisesDataFailure: false,
+    praisesLoadingSuccess: false,
+
+    praisesLoading: false,
+    praisesData: {},
+    praisesDataFailure: false,
+    praisesLoadingSuccess: false,
 }
 
 // add data success and failure here
