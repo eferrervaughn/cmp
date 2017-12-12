@@ -3,3 +3,5 @@ export const INITIAL_LOADING_STATE = {
     praisesLoading: false,
     usersLoading: false
 }
+
+// add data success and failure here

@@ -3,7 +3,7 @@ import firebase from 'firebase';
 import firestore from 'firebase/firestore';
 
 var config = {
-  apiKey: "AIzaSyBj5uaevyH9QNKMjNMKg8wv7dXY7s3GHYs",
+  apiKey: API_KEY
   authDomain: "cmyp-55b60.firebaseapp.com",
   databaseURL: "https://cmyp-55b60.firebaseio.com",
   projectId: "cmyp-55b60",
